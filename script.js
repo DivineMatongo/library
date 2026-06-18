@@ -6,4 +6,10 @@ function Book(title, author, pages, read) {
     this.author = author;
     this.pages = pages;
     this.read = read;
+
+    this.info = function() {
+        const read = this.read ? "already read" : "not read yet";
+        return `${this.title} by ${this.author}, ${this.pages} pages, ${read}`;
+    };
 }
+
