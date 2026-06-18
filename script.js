@@ -6,6 +6,7 @@ function Book(title, author, pages, read) {
     this.author = author;
     this.pages = pages;
     this.read = read;
+    this.id = crypto.randomUUID();
 
     this.info = function() {
         const read = this.read ? "already read" : "not read yet";
