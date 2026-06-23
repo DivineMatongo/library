@@ -23,6 +23,11 @@ function addBookToLibrary(title, author, pages, read) {
     );
 }
 
+function refresh() {
+    displayArea.innerHTML = "";
+    myLibrary.forEach(book => displayBook(book));
+}
+
 function displayBook(book) {
     const
         title = document.createElement("h3"),
