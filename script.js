@@ -1,3 +1,5 @@
+const myLibrary = [];
+
 function Book(title, author, pages, read) {
     if (!new.target) {
         throw new Error("Constructor must be invoked using the new keyword");
@@ -14,3 +16,8 @@ function Book(title, author, pages, read) {
     };
 }
 
+function addBookToLibrary(title, author, pages, read) {
+    myLibrary.push(
+        new Book(title, author, pages, read)
+    );
+}
