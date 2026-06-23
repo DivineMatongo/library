@@ -14,5 +14,39 @@
             <button id="del-book">Delete</button>
         </div>
         <div class="main-body"></div>
+        <dialog id="add-book-dialog">
+            <form>
+                <h2>Enter book details</h2>
+                <label for="title">Title:</label>
+                <input id="title" type="text">
+                <label for="author">Author:</label>
+                <input id="author" type="text">
+                <label for="pages">Pages:</label>
+                <input id="pages" type="number">
+
+                <fieldset>
+                    <legend>Already read?</legend>
+
+                    <label for="yes">
+                        <input id="yes" type="radio" name="read" checked>
+                        Yes
+                    </label>
+                    <label for="no">
+                        <input id="no" type="radio" name="read">
+                        No
+                    </label>
+                </fieldset>
+                <div class="dialog-buttons">
+                    <button type="button" command="close" commandfor="add-book-dialog"
+                    id="cancel-dialog">
+                        Cancel
+                    </button>
+                    <button type="submit" command="close" commandfor="add-book-dialog"
+                    id="submit-dialog">
+                        Done
+                    </button>
+                </div>
+            </form>
+        </dialog>
     </body>
 </html>

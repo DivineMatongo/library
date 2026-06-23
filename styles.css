@@ -28,3 +28,38 @@ h1 {
     height: 200px;
     text-align: center;
 }
+
+#add-book-dialog > form {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 20px;
+    justify-items: left;
+    grid-area
+}
+
+input[type="radio"] {
+    margin: 0px;
+}
+
+fieldset {
+    display: flex;
+    gap: 15px;
+    grid-column: 1 / -1;
+    justify-self: center;
+}
+
+fieldset > label {
+    display: flex;
+    gap: 3px;
+}
+
+form > h2 {
+    grid-column: 1 / -1;
+    justify-self: center;
+    margin: 0px;
+}
+
+.dialog-buttons {
+    grid-column: 1 / -1;
+    justify-self: center;
+}
