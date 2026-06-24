@@ -1,11 +1,13 @@
 const
     myLibrary = [],
     displayArea = document.querySelector(".main-body"),
+
     bookDialog = document.querySelector("#add-book-dialog"),
     bookDialogForm = document.querySelector("#add-book-dialog > form"),
     bookTitle = document.querySelector("#title");
     bookAuthor = document.querySelector("#author");
     bookPages = document.querySelector("#pages");
+    readYes = document.querySelector("#yes");
 ;
 
 function Book(title, author, pages, read) {
@@ -28,6 +30,18 @@ function addBookToLibrary(title, author, pages, read) {
     myLibrary.push(
         new Book(title, author, pages, read)
     );
+}
+
+function processBookDialog() {
+    addBookToLibrary (
+        bookTitle.value,
+        bookAuthor.value,
+        bookPages.value,
+        readYes.checked
+    )
+    bookTitle.value = "";
+    bookAuthor.value = "";
+    bookPages.value = "";
 }
 
 function refresh() {
@@ -67,7 +81,9 @@ document.querySelector("body").addEventListener("click", (e) => {
     } else if (e.target.id === "submit-dialog") {
         e.preventDefault();
         if (bookDialogForm.checkValidity()) {
+            processBookDialog();
             bookDialog.close();
+            refresh();
         } else {
             bookDialogForm.reportValidity();
         }
