@@ -10,19 +10,19 @@
     <body>
         <div class="header">
             <h1>Book Library</h1>
-            <button id="add-book">Add Book</button>
-            <button id="del-book">Delete</button>
+            <button id="add-book-btn">Add Book</button>
+            <button id="del-book-btn">Delete</button>
         </div>
         <div class="main-body"></div>
         <dialog id="add-book-dialog">
             <form>
                 <h2>Enter book details</h2>
                 <label for="title">Title:</label>
-                <input id="title" type="text">
+                <input id="title" type="text" required>
                 <label for="author">Author:</label>
-                <input id="author" type="text">
+                <input id="author" type="text" required>
                 <label for="pages">Pages:</label>
-                <input id="pages" type="number">
+                <input id="pages" type="number" required>
 
                 <fieldset>
                     <legend>Already read?</legend>
@@ -37,14 +37,8 @@
                     </label>
                 </fieldset>
                 <div class="dialog-buttons">
-                    <button type="button" command="close" commandfor="add-book-dialog"
-                    id="cancel-dialog">
-                        Cancel
-                    </button>
-                    <button type="submit" command="close" commandfor="add-book-dialog"
-                    id="submit-dialog">
-                        Done
-                    </button>
+                    <button type="button" id="cancel-dialog">Cancel</button>
+                    <button type="submit" id="submit-dialog">Done</button>
                 </div>
             </form>
         </dialog>

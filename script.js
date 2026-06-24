@@ -1,5 +1,12 @@
-const myLibrary = [];
-const displayArea = document.querySelector(".main-body");
+const
+    myLibrary = [],
+    displayArea = document.querySelector(".main-body"),
+    bookDialog = document.querySelector("#add-book-dialog"),
+    bookDialogForm = document.querySelector("#add-book-dialog > form"),
+    bookTitle = document.querySelector("#title");
+    bookAuthor = document.querySelector("#author");
+    bookPages = document.querySelector("#pages");
+;
 
 function Book(title, author, pages, read) {
     if (!new.target) {
@@ -52,3 +59,20 @@ function displayBook(book) {
 
     displayArea.appendChild(card);
 }
+
+document.querySelector("body").addEventListener("click", (e) => {
+    if (e.target.id === "add-book-btn") {
+        bookDialog.showModal();
+
+    } else if (e.target.id === "submit-dialog") {
+        e.preventDefault();
+        if (bookDialogForm.checkValidity()) {
+            bookDialog.close();
+        } else {
+            bookDialogForm.reportValidity();
+        }
+
+    } else if (e.target.id === "cancel-dialog") {
+        bookDialog.close();
+    }
+});
