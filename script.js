@@ -70,17 +70,39 @@ function displayBook(book) {
     read.textContent = book.read ? "Already read" : "Not read yet";
 
     const card = document.createElement("div");
+    card.id = book.id;
     card.classList.add("card");
     card.append(title, author, pages, read);
 
     displayArea.appendChild(card);
 }
 
-document.querySelector("body").addEventListener("click", (e) => {
+function deleteBookByID(id) {
+    myLibrary.forEach((book, index) => {
+        if (book.id === id) {
+            if (confirm(`Delete "${book.title}"?`)) {
+                myLibrary.splice(index, 1);
+                refresh();
+            }
+        }
+    });
+}
+
+delete
+
+document.querySelector(".header").addEventListener("click", (e) => {
     if (e.target.id === "add-book-btn") {
         bookDialog.showModal();
+    
+    } else if (e.target.id === "del-book-btn") {
+        if (selectedCard) {
+            deleteBookByID(selectedCard.id);
+        }
+    }
+});
 
-    } else if (e.target.id === "submit-dialog") {
+bookDialogForm.addEventListener("click", (e) => {
+    if (e.target.id === "submit-dialog") {
         e.preventDefault();
         if (bookDialogForm.checkValidity()) {
             processBookDialog();
@@ -92,9 +114,8 @@ document.querySelector("body").addEventListener("click", (e) => {
 
     } else if (e.target.id === "cancel-dialog") {
         bookDialog.close();
-    
-    }
-});
+    }}
+);
 
 displayArea.addEventListener("click", (e) => {
     const clickedCard = e.target.closest(".card");
