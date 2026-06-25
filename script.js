@@ -54,12 +54,14 @@ function refresh() {
 function displayBook(book) {
     const
         title = document.createElement("h3"),
+        separator = document.createElement("div"),
         author = document.createElement("p"),
         pages = document.createElement("p"),
         read = document.createElement("p")
     ;
 
     title.classList.add("title");
+    separator.classList.add("separator");
     author.classList.add("author");
     pages.classList.add("pages");
     read.classList.add("read");
@@ -67,12 +69,12 @@ function displayBook(book) {
     title.textContent = book.title;
     author.textContent = `by ${book.author}`;
     pages.textContent = `${book.pages} pages`;
-    read.textContent = book.read ? "Already read" : "Not read yet";
+    read.textContent = book.read ? "✅ Read" : "❌ Not read";
 
     const card = document.createElement("div");
     card.id = book.id;
     card.classList.add("card");
-    card.append(title, author, pages, read);
+    card.append(title, separator, author, pages, read);
 
     displayArea.appendChild(card);
 }
@@ -120,7 +122,7 @@ bookDialogForm.addEventListener("click", (e) => {
 displayArea.addEventListener("click", (e) => {
     const clickedCard = e.target.closest(".card");
     selectCard(clickedCard);
-})
+});
 
 function selectCard(targetCard) {
     if (selectedCard) {
@@ -144,19 +146,19 @@ function fillLibrary() {
         "Steven Erikson",
         1243,
         false
-    )
+    );
     addBookToLibrary(
         "Kingkiller",
         "Pat Rothfuss",
         782,
         true
-    )
+    );
     addBookToLibrary(
         "Stormlight",
         "Brando Sando",
         1480,
         false
-    )
+    );
     refresh();
 }
 

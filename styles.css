@@ -51,7 +51,8 @@ h1 {
 
 .card {
     background-color: white;
-    border-left: solid 6px orange;
+    border-left: solid 6px;
+    border-color: orange;
     border-radius: 6px;
     box-shadow: 1px 1px 3px darkgrey;
     width: 150px;
@@ -64,9 +65,16 @@ h1 {
     outline: solid 2px orange;
 }
 
+.separator {
+    width: 100px;
+    border-top: solid 2px;
+    border-color: inherit;
+    justify-self: center;
+}
+
 .selected {
+    border-color: orangered;
     outline: solid 2px orangered !important;
-    border-left: solid 6px orangered;
 }
 
 #add-book-dialog {
