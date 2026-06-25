@@ -131,3 +131,33 @@ function selectCard(targetCard) {
     }
     selectedCard = targetCard;
 }
+
+function fillLibrary() {
+    addBookToLibrary(
+        "Harry Potter",
+        "J.K. Rowling",
+        836,
+        true
+    );
+    addBookToLibrary(
+        "Malazan",
+        "Steven Erikson",
+        1243,
+        false
+    )
+    addBookToLibrary(
+        "Kingkiller",
+        "Pat Rothfuss",
+        782,
+        true
+    )
+    addBookToLibrary(
+        "Stormlight",
+        "Brando Sando",
+        1480,
+        false
+    )
+    refresh();
+}
+
+fillLibrary();
