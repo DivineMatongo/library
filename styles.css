@@ -1,13 +1,19 @@
 body {
+    font-family: 'Roboto', sysem-ui;
     height: 100vh;
     display: grid;
-    grid-template-rows: 3lh 1fr;
+    grid-template-rows: 5lh 1fr;
+    background-color: #e2e8f0;
+    margin: 0px;
 }
 
 .header {
     display: flex;
     align-items: center;
     gap: 15px;
+    background-color: white;
+    box-shadow: 1px 1px 5px darkgrey;
+    padding: 0px 40px;
 }
 
 h1 {
@@ -21,22 +27,27 @@ h1 {
     gap: 30px;
     padding: 40px;
     overflow: auto;
+    height: stretch;
 }
 
 .card {
-    background-color: pink;
-    outline: solid 1px blue;
+    background-color: white;
+    border-left: solid 6px orange;
+    border-radius: 6px;
+    box-shadow: 1px 1px 3px darkgrey;
     width: 150px;
     height: 200px;
     text-align: center;
+    cursor: pointer;
 }
 
 .card:hover {
-    outline: solid 3px red;
+    outline: solid 2px orange;
 }
 
 .selected {
-    outline: dashed 3px blue !important;
+    outline: solid 2px orangered !important;
+    border-left: solid 6px orangered;
 }
 
 #add-book-dialog > form {
@@ -73,4 +84,22 @@ form > h2 {
     justify-self: right;
     display: flex;
     gap: 15px;
+}
+
+.header button {
+    border: none;
+    border-radius: 15px;
+    width: 80px;
+    height: 25px;
+    background-color: #1992d4;
+    color: white;
+}
+
+.header button:hover {
+    outline: solid 2px #1992d4;
+}
+
+.header button:active {
+    outline: solid 2px darkorange;
+    background-color: darkorange;
 }
