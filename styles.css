@@ -65,6 +65,10 @@ h1 {
     outline: solid 2px orange;
 }
 
+.card > p {
+    font-size: small;
+}
+
 .separator {
     width: 100px;
     border-top: solid 2px;
