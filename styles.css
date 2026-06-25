@@ -2,7 +2,7 @@ body {
     font-family: 'Roboto', sysem-ui;
     height: 100vh;
     display: grid;
-    grid-template-rows: 5lh 1fr;
+    grid-template-rows: 5lh 1fr 4lh;
     background-color: #e2e8f0;
     margin: 0px;
 }
@@ -16,8 +16,27 @@ body {
     padding: 0px 40px;
 }
 
+.footer {
+    background-color: #1992d4;
+    display: grid;
+    place-items: center;
+}
+
+.footer > h2 {
+    color: white;
+    font-size: small;
+    font-weight: 500;
+    text-align: center;
+    line-height: 1.2lh;
+}
+
+.footer a:link, .footer a:visited {
+    color: white;
+}
+
 h1 {
     flex: auto;
+    color: #1474a9;
 }
 
 .main-body {
