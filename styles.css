@@ -50,6 +50,10 @@ h1 {
     border-left: solid 6px orangered;
 }
 
+#add-book-dialog {
+    border: 3px solid darkorange;
+}
+
 #add-book-dialog > form {
     display: grid;
     grid-template-columns: max-content 1fr;
@@ -59,6 +63,12 @@ h1 {
 
 input[type="radio"] {
     margin: 0px;
+}
+
+input:not([type="radio"]) {
+    border-radius: 5px;
+    border: 1px solid;
+    padding: 2px 5px;
 }
 
 fieldset {
@@ -81,12 +91,12 @@ form > h2 {
 
 .dialog-buttons {
     grid-column: 1 / -1;
-    justify-self: right;
+    justify-self: center;
     display: flex;
     gap: 15px;
 }
 
-.header button {
+button {
     border: none;
     border-radius: 15px;
     width: 80px;
@@ -95,11 +105,11 @@ form > h2 {
     color: white;
 }
 
-.header button:hover {
+button:hover {
     outline: solid 2px #1992d4;
 }
 
-.header button:active {
+button:active {
     outline: solid 2px darkorange;
     background-color: darkorange;
 }
