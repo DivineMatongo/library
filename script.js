@@ -90,5 +90,19 @@ document.querySelector("body").addEventListener("click", (e) => {
 
     } else if (e.target.id === "cancel-dialog") {
         bookDialog.close();
+    
     }
 });
+
+displayArea.addEventListener("click", (e) => {
+    const targetCard = e.target.closest(".card");
+    selectCard(targetCard);
+})
+
+function selectCard(targetCard) {
+    const cardList = Array.from(displayArea.children);
+    cardList.forEach(card => card.classList.remove("selected"));
+    if (targetCard) {
+        targetCard.classList.add("selected");
+    }
+}
