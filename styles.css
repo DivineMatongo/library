@@ -20,6 +20,7 @@ h1 {
     align-content: flex-start;
     gap: 30px;
     padding: 40px;
+    overflow: auto;
 }
 
 .card {
