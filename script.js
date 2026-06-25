@@ -10,6 +10,8 @@ const
     readYes = document.querySelector("#yes");
 ;
 
+let selectedCard;
+
 function Book(title, author, pages, read) {
     if (!new.target) {
         throw new Error("Constructor must be invoked using the new keyword");
@@ -95,14 +97,16 @@ document.querySelector("body").addEventListener("click", (e) => {
 });
 
 displayArea.addEventListener("click", (e) => {
-    const targetCard = e.target.closest(".card");
-    selectCard(targetCard);
+    const clickedCard = e.target.closest(".card");
+    selectCard(clickedCard);
 })
 
 function selectCard(targetCard) {
-    const cardList = Array.from(displayArea.children);
-    cardList.forEach(card => card.classList.remove("selected"));
+    if (selectedCard) {
+        selectedCard.classList.remove("selected");
+    }
     if (targetCard) {
         targetCard.classList.add("selected");
     }
+    selectedCard = targetCard;
 }
